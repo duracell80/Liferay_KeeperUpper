@@ -46,6 +46,8 @@ cp -rf ./archived_dxp/osgi/configs ./liferay_dxp/osgi
 cp -rf ./archived_dxp/data ./liferay_dxp
 cp -rf ./archived_dxp/deploy ./liferay_dxp
 cp -rf ./archived_dxp/*.properties ./liferay_dxp
+cp -rf ./acrhived_dxp/licence/* ./liferay_dxp/licence
+cp -rf ./archived_dxp/tomcat/conf ./liferay_dxp/tomcat
 
 mv -f ./liferay_dxp/osgi/war/* ./liferay_dxp/deploy
 mv -f ./liferay_dxp/osgi/modules/* ./liferay_dxp/deploy

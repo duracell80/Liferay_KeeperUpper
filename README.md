@@ -14,5 +14,13 @@ So far:
 $ cd ~/
 $ git clone https://github.com/duracell80/Liferay_KeeperUpper.git
 $ mv Liferay_KeeperUpper liferay & cd liferay
-$ ./liferay-get-74.sh
+$ ./lfr-get.sh
+```
+
+# Update
+```
+$ cd ~/liferay
+$ ./liferay_dxp/tomcat/bin/shutdown.sh
+$ ./lfr-update.sh
+$ ./liferay_dxp/tomcat/bin/startup.sh
 ```
