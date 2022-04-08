@@ -7,15 +7,18 @@ else
         VERSION=$1
 fi
 
-# CAINT NEVER COULD
-#wget "https://github.com/liferay/liferay-portal/releases/tag/7.4.3.$VERSION-ga$VERSION"
-#FILE=$(cat "./7.4.3.$VERSION-ga$VERSION" | grep -i "tar.gz" | grep -i "tomcat" | cut -d '>' -f2 | cut -d '<' -f1)
-#wget "https://github.com/liferay/liferay-portal/releases/download/7.4.3.$VERSION-ga$VERSION/${FILE:1}"
-#rm -f 7.*
+echo $VERSION > version
 
-tar xvf *.tar.gz
-mv -f *.tar.gz ../Downloads
-mv -f liferay-ce-portal* ./liferay_dxp
-mv -f ./liferay_dxp/tomcat-* ./liferay_dxp/tomcat
+# CAINT NEVER COULD
+wget "https://github.com/liferay/liferay-portal/releases/tag/7.4.3.$VERSION-ga$VERSION"
+FILE=$(cat "./7.4.3.$VERSION-ga$VERSION" | grep -i "tar.gz" | grep -i "tomcat" | cut -d '>' -f2 | cut -d '<' -f1)
+wget "https://github.com/liferay/liferay-portal/releases/download/7.4.3.$VERSION-ga$VERSION/${FILE:1}"
+rm -f 7.*
+
+tar xvf *.tar.gz --directory ./
+#mv -f *.tar.gz ../Downloads
+
+mv -f liferay-ce-portal-7* liferay_dxp
+mv -f liferay_dxp/tomcat-* liferay_dxp/tomcat
 
 ./liferay_dxp/tomcat/bin/startup.sh
