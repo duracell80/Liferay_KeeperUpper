@@ -43,12 +43,20 @@ cp -rf ./archived_dxp/osgi/war ./liferay_dxp/osgi
 cp -rf ./archived_dxp/osgi/marketplace/override ./liferay_dxp/osgi/marketplace
 cp -rf ./archived_dxp/osgi/configs ./liferay_dxp/osgi
 
+# data and license
 cp -rf ./archived_dxp/data ./liferay_dxp
 cp -rf ./archived_dxp/deploy ./liferay_dxp
 cp -rf ./archived_dxp/*.properties ./liferay_dxp
-cp -rf ./acrhived_dxp/licence/* ./liferay_dxp/licence
-cp -rf ./archived_dxp/tomcat/conf ./liferay_dxp/tomcat
+cp -rf ./acrhived_dxp/license/* ./liferay_dxp/license
 
+# Tomcat
+cp -rf ./archived_dxp/tomcat/conf ./liferay_dxp/tomcat
+cp -rf ./archived_dxp/tomcat/bin/setenv.sh ./liferay_dxp/tomcat/bin
+cp -rf ./archived_dxp/tomcat/webapps/ROOT/WEB-INF/web.xml ./liferay_dxp/tomcat/webapps/ROOT/WEB-INF
+cp -rf ./archived_dxp/tomcat/webapps/ROOT/WEB-INF/classes ./liferay_dxp/tomcat/webapps/ROOT/WEB-INF
+
+
+# Redploy Wars and Modules
 mv -f ./liferay_dxp/osgi/war/* ./liferay_dxp/deploy
 mv -f ./liferay_dxp/osgi/modules/* ./liferay_dxp/deploy
 
